@@ -1,0 +1,184 @@
+/*
+    All Credit goes to http://fengyuanchen.github.io/cropper
+*/
+
+.cropper-container {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+.cropper-container img {
+    display: block;
+    width: 100%;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 100%;
+    min-height: 0 !important;
+    max-height: none !important;
+    image-orientation: 0deg !important;
+}
+
+.cropper-canvas,
+.cropper-drag-box,
+.cropper-crop-box,
+.cropper-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: move;
+}
+
+.cropper-canvas {
+    background-color: #fff;
+    opacity: 0.6;
+    cursor: move;
+}
+
+.cropper-view-box {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+.cropper-crop-box {
+    pointer-events: none;
+}
+.cropper-crop-box.enable-drag {
+    pointer-events: auto;
+}
+
+.cropper-dashed {
+    position: absolute;
+    display: block;
+    filter: alpha(opacity=50);
+    border: 0 dashed #fff;
+    opacity: .5;
+}
+
+.cropper-dashed.dashed-h {
+    top: 33.33333333%;
+    left: 0;
+    width: 100%;
+    height: 33.33333333%;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+.cropper-dashed.dashed-v {
+    top: 0;
+    left: 33.33333333%;
+    width: 33.33333333%;
+    height: 100%;
+    border-right-width: 1px;
+    border-left-width: 1px;
+}
+
+.cropper-face,
+.cropper-line,
+.cropper-point {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=10);
+    opacity: .1;
+}
+
+.cropper-face {
+    top: 0;
+    left: 0;
+    cursor: move;
+    pointer-events: none;
+    background-color: #fff;
+}
+
+.cropper-invisible {
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.cropper-hide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.cropper-hidden {
+    width: 0px !important;
+    opacity: 0 !important;
+    height: 0px !important;
+    pointer-events: none !important;
+}
+
+.cropper-move {
+    z-index: 1;
+    cursor: move;
+    margin: 20px;
+}
+
+.cropper-crop {
+    cursor: crosshair;
+}
+
+.cropper-disabled .cropper-drag-box,
+.cropper-disabled .cropper-face,
+.cropper-disabled .cropper-line,
+.cropper-disabled .cropper-point {
+    cursor: not-allowed;
+}
+
+.canvas-element canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.cropper-center {
+  display: block;
+  height: 0;
+  left: 50%;
+  opacity: .75;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+.cropper-center:before,
+.cropper-center:after {
+  background-color: #eee;
+  content: ' ';
+  display: block;
+  position: absolute;
+}
+
+.cropper-center:before {
+  height: 1px;
+  left: -3px;
+  top: 0;
+  width: 7px;
+}
+
+.cropper-center:after {
+  height: 7px;
+  left: 0;
+  top: -3px;
+  width: 1px;
+}
